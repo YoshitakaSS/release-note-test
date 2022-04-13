@@ -1,10 +1,14 @@
 name: Release Drafter
 
+# on:
+#   pull_request:
+#     branches:
+#       - main
+#     types: [closed]
 on:
-  pull_request:
+  push:
     branches:
       - main
-    types: [closed]
 
 jobs:
   update_release_draft:
@@ -13,3 +17,5 @@ jobs:
       - uses: release-drafter/release-drafter@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          draft: false
