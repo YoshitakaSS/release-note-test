@@ -3,10 +3,7 @@ name: ReleaseNote
 on:
   push:
     branches: main
-    
-env:
-  HOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
-  REPO_NAME: LarvelTemplate
+
 jobs:
   build:
     runs-on: ubuntu-latest
